@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="icon" href="images/favicon-32x32.png" />
+    <title>BoomBla</title>
+  </head>
+  <body>
+    <!--Начальный экран-->
+    <div class="start-screen" id="start-screen">
+      <div class="title">BoomBla</div>
+      <button class="start-button" onclick="second_screen()">Начать</button>
+    </div>
+
+    <!--Стартовая сюжетная вставка-->
+    <div id="true-story" class="true-story">
+      <div class="story-start">Человечество не следило за экологией.</div>
+      <div class="story-start">Последнее зеленое дерево завяло.</div>
+      <div class="story-start">Уровень кислорода стремительно падал.</div>
+      <div class="story-start">Люди спрятались в уютные бункеры.</div>
+      <div class="story-start">Но был я, я не хотел сидеть на месте.</div>
+      <div class="story-start">Я решил действовать!</div>
+      <div class="story-start">И у меня созрел план...</div>
+      <button
+        class="Poisk back-to-garage-from-svalka from-story"
+        onclick="garage_from_story()"
+      >
+        Пройти<br />в<br />гараж
+      </button>
+    </div>
+    <!--Выбор в гараже-->
+    <div id="vibor-v-garage" class="vibor-v-garage">
+      <div class="inventar">
+        <ul class="inventar-list">
+          <li class="item item1">
+            кусочки: <span id="kus3" class="kus">0</span>
+          </li>
+          <li class="item item2">
+            веревочки: <span id="ver3" class="ver">0</span>
+          </li>
+          <li class="item item3">
+            порох: <span id="por3" class="por">0</span>
+          </li>
+          <li class="item item4">
+            прогресс очищения: <span id="prog" class="por">0</span>%
+          </li>
+        </ul>
+      </div>
+      <button class="Poisk-start" onclick="poisk_from_garage()">
+        Поискать<br />взрывчатку
+      </button>
+      <button class="Craft-petarda" onclick="craft_bomb_from_garage()">
+        Скрафтить<br />взрывчатку
+      </button>
+      <button
+        id="activateTsar"
+        style="background-color: red"
+        class="activateTsar"
+        onclick="activateTB()"
+      >
+        Запустить<br />царь-бомбу
+      </button>
+      <button
+        id="goTree"
+        style="background-color: green"
+        class="goTree"
+        onclick="plantTree()"
+      >
+        Посадить<br />деревья
+      </button>
+    </div>
+    <!-----------------------------Скрафтить взрывчатку---------------------------------->
+    <div id="Craft-petarda-table" class="Craft-petarda-table">
+      <ul class="inventar-list">
+        <li class="item item1">
+          кусочки: <span id="kus2" class="kus">0</span>
+        </li>
+        <li class="item item2">
+          веревочки: <span id="ver2" class="ver">0</span>
+        </li>
+        <li class="item item3">порох: <span id="por2" class="por">0</span></li>
+        <li class="item item4">
+          прогресс очищения:  <span id="prog" class="por">0</span>%
+        </li>
+      </ul>
+      <button class="back-to-garage" onclick="garage_bomb_from_craft()">
+        Назад <br />
+        в гараж
+      </button>
+      <div class="recept-list">
+        <ul class="recepts">
+          <div class="class1">
+            <li class="recert recert-petarda">
+              Петарда <br />
+              ----------------
+              <span class="components">
+                <br />
+                кусочки: 1 <br />
+                веревочки: 1 <br />
+                порох:1
+              </span>
+            </li>
+            <button class="Sdelat Sdelat-petarda" onclick="craftPet()">
+              <span class="strelka">➜</span>
+            </button>
+            <span class="result">
+              петарда <br />------------<br />
+              <span
+                >У меня: <span id="kolPet1">0</span><br />Есть место для:
+                <span id="placeForPet" class="ostatok-petard">30</span><br
+              /></span>
+              ---------------- <br />
+              <span class="opisanie"
+                >этим грозным оружием только крыс пугать</span
+              >
+            </span>
+          </div>
+
+          <div class="class1">
+            <li class="recert recert-dinamit">
+              Динамит<br />----------------
+              <span class="components">
+                <br />
+                кусочки: 6 <br />
+                веревочки: 4 <br />
+                порох:16</span
+              >
+            </li>
+            <button class="Sdelat Sdelat-dinamit">
+              <span class="strelka" onclick="craftDin()">➜</span>
+            </button>
+            <span class="result">
+              динамит <br />------------<br />
+              <span
+                >У меня: <span id="kolDin1">0</span><br />Есть место для:
+                <span id="placeForDin" class="ostatok-petard">15</span><br
+              /></span>
+              ---------------- <br />
+              <span class="opisanie">Полезная в хозяйстве штучка</span>
+            </span>
+          </div>
+
+          <div class="class1">
+            <li class="recert recert-TcarBomb">
+              Царь-бомба<br />----------------
+              <span class="components">
+                <br />
+                Динамит: 10 <br
+              /></span>
+            </li>
+            <button class="Sdelat Sdelat-TcarBomb">
+              <span class="strelka" onclick="craftTB()">➜</span>
+            </button>
+            <span class="result">
+              царь-бомба <br />------------<br />
+              <span
+                >У меня: <span id="kolTB1">0</span><br />Есть место для:
+                <span id="placeForTB" class="ostatok-petard">15</span><br
+              /></span>
+              ---------------- <br />
+              <span class="opisanie">её изобретали не для царя</span>
+            </span>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <!-----------------------------Поискать взрывчатку---------------------------------->
+    <div id="poisk-componentov" class="poisk-componentov">
+      <ul class="inventar-list">
+        <li class="item item1">
+          кусочки: <span id="kus1" class="kus">0</span>
+        </li>
+        <li class="item item2">
+          веревочки: <span id="ver1" class="ver">0</span>
+        </li>
+        <li class="item item3">порох: <span id="por1" class="por">0</span></li>
+        <li class="item item4">
+          прогресс очищения: <span id="prog" class="por">0</span>%
+        </li>
+      </ul>
+      <div class="chance-opisanie">
+        При поиске ручками будет найден 1 случайный компонент<br /><br /><br />
+        При поиске взрывчаткой будет найдено немного больше стоимости самой
+        взрывчатки
+      </div>
+      <div class="poiskBtns">
+        <button class="Poisk" onclick="poisk()">
+          Поискать<br />взрывчатку<br />ручками
+        </button>
+        <button
+          class="Poisk back-to-garage-from-svalka"
+          onclick="garage_from_poisk()"
+        >
+          Вернуться<br />в<br />гараж
+        </button>
+        <div class="poisk-methods">
+          <div class="kol-vo-poisk">
+            У меня
+            <span id="kolPet2" class="kol-vo-petard">0</span> петард<br />
+            <button class="Poisk1" onclick="poiskPet()">
+              Поискать<br />взрывчатку<br />петардой
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-----------------------------Создать механизм---------------------------------->
+    <script src="scripts/scripts.js"></script>
+  </body>
+</html>
