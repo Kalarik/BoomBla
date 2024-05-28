@@ -1,0 +1,355 @@
+/*-----------------Общие стили--------------*/
+* {
+  margin: 0px;
+  font-family: CutOutOfFont;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: CutOutOfFont;
+  src: url("CutOutOFFont.otf") format(truetype);
+}
+body {
+  width: 100vw;
+  height: 100vh;
+}
+/*-----------------Начальный экран--------------*/
+
+.start-screen {
+  display: none; /*---вкл или выкл начальный экран--*/
+  background-image: url("main-background.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 100vh;
+  width: 100vw;
+}
+.title {
+  margin-top: 100px;
+  font-size: 150px;
+  text-align: center;
+  color: rgb(181, 40, 216);
+}
+.title::first-letter {
+  color: rgb(230, 191, 20);
+  font-weight: 100;
+}
+.start-button {
+  background-color: rgb(181, 40, 216);
+  color: rgb(253, 207, 0);
+  width: 25%;
+  height: 70px;
+  border-radius: 70px;
+  border: none;
+  font-size: 60px;
+  margin-left: 37%;
+  margin-top: 300px;
+  padding: 6px;
+  cursor: pointer;
+  min-width: 300px;
+}
+.start-button:hover {
+  background-color: rgb(191, 75, 219);
+}
+.start-button:focus {
+  background-color: rgb(191, 75, 219);
+  outline: none;
+}
+/*-----------------Стартовая сюжетная вставка--------------*/
+.true-story {
+  display: block; /*---вкл или выкл сюжетная вставка--*/
+  background-image: url("main-background.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 100vh;
+  width: 100vw;
+}
+.story-start {
+  color: rgba(107, 238, 47, 0.856);
+  font-size: 37px;
+  white-space: nowrap;
+  margin-top: 50px;
+  text-align: center;
+  transform: translateY(-50%);
+}
+.story-start {
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+    blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100vw;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+.from-story {
+  position: relative;
+  top: -90px;
+  right: -27%;
+}
+/*-----------------Выбор в гараже--------------*/
+.vibor-v-garage {
+  display: none; /*---вкл или выкл выбор в гараже--*/
+  background-image: url("main-background.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 100vh;
+  width: 100vw;
+  min-width: 1000px;
+}
+.vibor-v-garage button {
+  margin-top: 400px;
+  background-color: rgb(255, 94, 35);
+  width: 450px;
+  height: 190px;
+  border-radius: 70px;
+  border: none;
+  font-size: 30px;
+  padding: 12px;
+  cursor: pointer;
+  min-width: 250px;
+  margin-left: 50px;
+  font-size: 55px;
+}
+.vibor-v-garage button:hover {
+  background-color: rgb(250, 121, 74);
+}
+.vibor-v-garage button:focus {
+  background-color: rgb(250, 121, 74);
+  outline: none;
+}
+.Poisk {
+  position: relative;
+  bottom: 0px;
+}
+.Craft-petarda {
+  position: relative;
+  left: 200px;
+}
+.activateTsar {
+  position: absolute;
+  left: 1300px;
+  top: 200px;
+}
+.goTree {
+  position: absolute;
+  left: 1300px;
+  top: -200px;
+}
+/*-----------------Скрафтить взрывчатку--------------*/
+.Craft-petarda-table {
+  display: none; /*---вкл или выкл скрафтить взрывчатку--*/
+  background-image: url("main-background.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 100vh;
+  width: 100vw;
+  min-width: 1000px;
+}
+.inventar-list {
+  display: flex;
+  margin-top: 20px;
+}
+.item {
+  margin-right: 30px;
+  font-size: 25px;
+}
+
+.recept-list {
+  display: inline-block;
+  background-color: rgba(240, 255, 255, 0.425);
+  height: 830px;
+  width: 800px;
+  margin-top: 35px;
+  border-radius: 30px;
+  margin-left: 250px;
+}
+.recert {
+  height: 240px;
+  width: 350px;
+  margin-top: 25px;
+  font-size: 25px;
+  background-color: rgba(240, 255, 255, 0.692);
+  margin-right: 35px;
+  border-radius: 30px;
+  padding: 20px;
+}
+.components {
+  font-size: 23px;
+}
+.opisanie {
+  font-size: 14px;
+}
+.Sdelat {
+  position: relative;
+  top: 125px;
+  left: -20px;
+  height: 30px;
+  width: 40px;
+  border-radius: 20px;
+  font-size: 30px;
+  margin-top: 10px;
+  background-color: rgb(8, 211, 8);
+  color: rgb(255, 255, 255);
+  border: none;
+  cursor: pointer;
+}
+.Sdelat:hover {
+  content: attr(title);
+  color: red;
+  background-color: rgb(51, 228, 51);
+}
+.strelka {
+  position: relative;
+  top: -8px;
+  left: -2px;
+}
+.class1 {
+  display: flex;
+}
+.result {
+  height: 240px;
+  width: 350px;
+  margin-top: 25px;
+  font-size: 25px;
+  background-color: rgba(240, 255, 255, 0.692);
+  margin-right: 35px;
+  border-radius: 30px;
+  padding: 20px;
+}
+.kol-vo {
+  height: 240px;
+  width: 250px;
+  margin-top: 25px;
+  font-size: 25px;
+  background-color: rgba(240, 255, 255, 0.692);
+  margin-right: 35px;
+  border-radius: 30px;
+  padding: 20px;
+}
+.back-to-garage {
+  position: relative;
+  top: -500px;
+  left: 100px;
+  height: 200px;
+  width: 300px;
+  margin-top: 10px;
+  border-radius: 20px;
+  font-size: 60px;
+  background-color: rgb(255, 197, 39);
+  color: rgb(255, 255, 255);
+  border: none;
+  cursor: pointer;
+}
+/*-----------------поискать взрывчатку--------------*/
+
+.poisk-componentov {
+  display: none; /*---вкл или выкл поискать взрывчатку--*/
+  background-image: url("main-background.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 100vh;
+  width: 100vw;
+  min-width: 1000px;
+}
+.chance-opisanie {
+  background-color: rgba(238, 215, 215, 0.308);
+  border-radius: 60px;
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 50px;
+  max-width: 920px;
+  color: rgb(0, 0, 0);
+  margin-left: 20px;
+}
+.poiskBtns {
+  display: flex;
+  margin-top: 300px;
+  margin-left: 200px;
+}
+
+.Poisk {
+  background-color: rgb(35, 255, 53);
+  width: 350px;
+  height: 200px;
+  border-radius: 70px;
+  border: none;
+  font-size: 45px;
+  padding: 12px;
+  cursor: pointer;
+  min-width: 250px;
+  margin-right: 15%;
+}
+.Poisk:hover {
+  opacity: 80%;
+}
+.Poisk:focus {
+  opacity: 80%;
+  outline: none;
+}
+.poisk-methods {
+  display: flex;
+}
+.kol-vo-poisk {
+  background-color: rgba(238, 222, 209, 0.753);
+  height: 200px;
+  width: 350px;
+  padding-top: 25px;
+  text-align: center;
+  border-radius: 50px;
+  font-size: 30px;
+}
+.Poisk1 {
+  margin-top: 15px;
+  background-color: rgb(35, 255, 237);
+  border-radius: 70px;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  width: 70%;
+  height: 110px;
+  width: 250px;
+  font-size: 26px;
+}
+.Poisk1:hover {
+  opacity: 80%;
+}
+.Poisk1:focus {
+  opacity: 80%;
+  outline: none;
+}
+.back-to-garage-from-svalka {
+  background-color: rgb(255, 197, 39);
+}
+/*------Панель включения экранов-----*/
+.start-screen {
+  display: block; /*------начальный экран-----*/
+}
+.true-story {
+  display: none; /*---вкл или выкл сюжетная вставка--*/
+}
+.vibor-v-garage {
+  display: none; /*---вкл или выкл выбор в гараже--*/
+}
+.Craft-petarda-table {
+  display: none; /*---вкл или выкл скрафтить взрывчатку--*/
+}
+.poisk-componentov {
+  display: none; /*---вкл или выкл поискать взрывчатку--*/
+}
+.activateTsar {
+  display: none;
+}
+.goTree {
+  display: none;
+}
